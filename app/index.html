@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="color-scheme: Bright;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Drill</title>
     <link rel="icon" type="image/png" href="ii.jpg">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -24,32 +25,61 @@
         <p class="para">Welcome to our HealthDrill platform ,<br> your trusted source for reliable health information and expert advice.<br> We are dedicated to empowering individuals with the knowledge <br>they need to make informed decisions about their health and well-being.<br> Whether you're looking for tips on healthy living, managing specific conditions<br> or general wellness guidance, our comprehensive resources are here to help.<br> Stay informed, stay healthy!</p>
     </nav>
 
-    <div class="wrapper">
     
-        <form action="">
-            <h2>Login</h2>
-            <div class="input-box">
-                <input type="text"  placeholder="Username">
-                <i class='bx bxs-user'></i>
-            </div>
-            <div class="input-box">
-                 <input type="password" placeholder="password">
-                 <i class='bx bxs-lock-alt' ></i>
-            </div>
-            <div class="forgot-pass">
-                <button type="submit">Login</button>&nbsp;&nbsp;
-                <a href="http://127.0.0.1:5500/forgot.html"> Forgot Password</a><br>
-            </div>
-            <div class="create-new">
-                <p>Not registered?</p>
-                <a href="http://127.0.0.1:5500/create.html">Create an account</a>
-            </div>
-        </form>
-   </div> 
+    <div class="login-container">
+      <h2>Login</h2>
+      <form action="/login" method="post">
+          <div class="input-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" required>
+          </div>
+          <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+          <div class="login-links">
+              <a href="/forgot-password" class="forgot-link">Forgot Password?</a>
+              <a href="/signup" class="signup-link">New User? Sign Up</a>
+          </div>
+      </form>
+  </div>
+
+  
 
    <footer>
-    <p>&copy; 2024 E-Healthcare Advisor | All rights reserved</p>
-   </footer>
+    <div class="container">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <p>Email:abc2gmail.com</p>
+            <p>Phone:+91 565565656</p>
+            <p>Address:Hyd 123 street</p>
+        </div>
+        <div class="footer-content">
+            <h3>Quick Links</h3>
+             <ul class="list">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Contact us</a></li>
+             </ul>
+        </div>
+        <div class="footer-content">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+             <li><a href=""><i class="fab fa-facebook"></i></a></li>
+             <li><a href=""><i class="fab fa-twitter"></i></a></li>
+             <li><a href=""><i class="fab fa-instagram"></i></a></li>
+             <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+            </div>
+    </div>
+    <div class="bottom-bar">
+        <p>&copy; 2023 HealthDrill . All rights reserved</p>
+    </div>
+</footer>
+
 
 </body>
 </html>
