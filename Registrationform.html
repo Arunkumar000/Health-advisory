@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: Bright;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account</title>
+    <link rel="icon" type="image/png" href="ii.jpg">
+    <link rel="stylesheet" href="regstyle.css">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <img src="ii.jpg" class="logo" alt="HealthDrill Logo" height="100px" width="100px">
+        <h2 class="site-title">HealthDrill <br> Care and Knowledge Center</h2>
+    </header>
+    <div class="login-container">
+        <h2> Create a New Account</h2>
+        <form name="Registrationform" id="Registrationform" method="post" action="/SignUp">
+            <div class="input-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="input-group">
+                <label for="age">Age</label>
+                <input type="text" id="age" name="age" required>
+            </div>
+            <div class="input-group">
+                <label for="mobile">Mobile</label>
+                <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" cols="30" rows="3" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" required>
+            </div>
+            <button type="submit" class="login-btn">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
