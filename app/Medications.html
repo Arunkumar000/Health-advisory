@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggested Medications</title>
+    <link rel="icon" type="image/png" href="ii.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        /* General Body Styles */
+        body {
+            font-size: 18px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-heading-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-heading-container img {
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .logo-heading-container h1 {
+            margin: 0;
+            font-size: 22px;
+            line-height: 1.2;
+            color: #333;
+        }
+
+        .profile-icon {
+            font-size: 28px;
+            color: #343434;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .profile-icon:hover {
+            color: #28a745;
+        }
+
+        /* Button Styles */
+        .btn-back {
+            background-color: #000080; /* Navy blue color */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #000066;
+            transform: translateY(-2px);
+        }
+
+        /* Medication List Styles */
+        .medication-list {
+            margin-top: 30px;
+            padding: 0 15px;
+        }
+
+        .medication-item {
+            margin: 15px 0;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .medication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .medication-item h4 {
+            color: #0056b3;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .medication-item p {
+            color: #555;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #343434;
+            padding: 20px 0; /* Reduced padding to make the footer smaller */
+            margin-top: 50px; /* Adjust space between footer and previous content */
+            text-align: center;
+            color: white;
+        }
+
+        footer p {
+            font-size: 18px; /* Increased font size for text in footer */
+            margin-bottom: 5px;
+        }
+
+        /* Footer Heading */
+        footer h3 {
+            font-size: 24px; /* Increased font size for the heading */
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #28a745;
+        }
+
+        /* Container and Page Layout */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+        }
+
+        /* Card Styles */
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            background-color: #ffffff;
+        }
+
+        .card-header {
+            font-size: 20px;
+            background-color: #28a745;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .card-body {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Contact Section in Footer */
+        .footer-content h3 {
+            color: #fff;
+            font-size: 24px; /* Increased font size for the heading */
+            margin-bottom: 15px; /* Reduced space between heading and text */
+        }
+
+        .footer-content p {
+            font-size: 18px; /* Increased font size for the text */
+            margin-bottom: 5px; /* Reduced space between lines */
+        }
+
+        /* Adjust Space Between Button and Footer */
+        .text-center.mt-4 {
+            margin-top: 20px; /* Reduced the margin between the button and the footer */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-heading-container">
+            <img src="ii.jpg" alt="HealthDrill Logo" height="50" width="50">
+            <h1>HealthDrill<br>Care and Knowledge Center</h1>
+        </div>
+        <div class="search-profile-container">
+            <input type="text" class="form-control search-bar" placeholder="Search...">
+            <i class="fas fa-user profile-icon" title="User Profile"></i>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4" style="color: #333;">Suggested Medications Based on Your Diagnosis</h2>
+
+        <div class="medication-list">
+            <!-- Medication 1 -->
+            <div class="medication-item">
+                <h4>Medication Name: Ibuprofen</h4>
+                <p><strong>Description:</strong> Ibuprofen is a non-steroidal anti-inflammatory drug (NSAID) used to reduce fever, pain, and inflammation.</p>
+                <p><strong>Usage:</strong> Take as prescribed by your doctor. Commonly used for headaches, muscle aches, or minor injuries.</p>
+                <p><strong>Side Effects:</strong> Upset stomach, dizziness, or gastrointestinal issues. Always consult your doctor before use.</p>
+            </div>
+
+            <!-- Medication 2 -->
+            <div class="medication-item">
+                <h4>Medication Name: Paracetamol</h4>
+                <p><strong>Description:</strong> Paracetamol (acetaminophen) is used to treat mild to moderate pain and reduce fever.</p>
+                <p><strong>Usage:</strong> Recommended dosage depends on your age and condition. Used for pain relief and fever control.</p>
+                <p><strong>Side Effects:</strong> Can cause liver damage in high doses. Consult your doctor before use if you have liver conditions.</p>
+            </div>
+
+            <!-- Medication 3 -->
+            <div class="medication-item">
+                <h4>Medication Name: Antibiotics (Amoxicillin)</h4>
+                <p><strong>Description:</strong> Amoxicillin is a broad-spectrum antibiotic used to treat bacterial infections.</p>
+                <p><strong>Usage:</strong> Follow the prescribed dosage. Do not stop taking early, even if symptoms improve.</p>
+                <p><strong>Side Effects:</strong> Diarrhea, nausea, or allergic reactions. Contact your healthcare provider for concerns.</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn-back" onclick="history.back()">Go Back</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 footer-content">
+                    <h3>Contact Us</h3>
+                    <p><strong>Email:</strong> abc@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 565565656</p>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <p>&copy; 2024 HealthDrill. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    // Array of medications for different diseases
+    const medications = {
+        "Disease 1": [
+            {
+                name: "Ibuprofen",
+                description: "Ibuprofen is a non-steroidal anti-inflammatory drug (NSAID) used to reduce fever, pain, and inflammation.",
+                usage: "Take as prescribed by your doctor. Commonly used for headaches, muscle aches, or minor injuries.",
+                sideEffects: "Upset stomach, dizziness, or gastrointestinal issues."
+            },
+            {
+                name: "Paracetamol",
+                description: "Paracetamol (acetaminophen) is used to treat mild to moderate pain and reduce fever.",
+                usage: "Recommended dosage depends on your age and condition. Used for pain relief and fever control.",
+                sideEffects: "Can cause liver damage in high doses. Consult your doctor before use if you have liver conditions."
+            }
+        ],
+        "Disease 2": [
+            {
+                name: "Amoxicillin",
+                description: "Amoxicillin is a broad-spectrum antibiotic used to treat bacterial infections.",
+                usage: "Follow the prescribed dosage. Do not stop taking early, even if symptoms improve.",
+                sideEffects: "Diarrhea, nausea, or allergic reactions. Contact your healthcare provider for concerns."
+            },
+            {
+                name: "Ciprofloxacin",
+                description: "Ciprofloxacin is an antibiotic used to treat a variety of bacterial infections.",
+                usage: "Take as prescribed. It is often used for urinary tract infections or respiratory infections.",
+                sideEffects: "Nausea, diarrhea, dizziness. May increase sensitivity to sunlight."
+            }
+        ],
+        // Add more diseases and medications as needed
+    };
+
+    // Function to display medications based on the disease
+    function showMedications(disease) {
+        const medicationList = document.getElementById('medication-list');
+        medicationList.innerHTML = ''; // Clear the list before adding new medications
+
+        const meds = medications[disease];
+        if (meds) {
+            meds.forEach(med => {
+                const medItem = document.createElement('div');
+                medItem.classList.add('medication-item');
+                medItem.innerHTML = `
+                    <h4>Medication Name: ${med.name}</h4>
+                    <p><strong>Description:</strong> ${med.description}</p>
+                    <p><strong>Usage:</strong> ${med.usage}</p>
+                    <p><strong>Side Effects:</strong> ${med.sideEffects}</p>
+                `;
+                medicationList.appendChild(medItem);
+            });
+        } else {
+            medicationList.innerHTML = '<p>No medications found for this disease.</p>';
+        }
+    }
+
+    // Simulate fetching the diagnosed disease from the previous page or backend
+    const diagnosedDisease = "Disease 1"; // Example: This could come from a previous result or API
+    showMedications(diagnosedDisease);
+
+</script>
+</html>
